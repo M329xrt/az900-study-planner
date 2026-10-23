@@ -1,0 +1,60 @@
+{
+  "name": "TopicProgress",
+  "type": "object",
+  "properties": {
+    "topic_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "not_started",
+        "learning",
+        "reviewing",
+        "mastered"
+      ],
+      "default": "not_started"
+    },
+    "confidence": {
+      "type": "number",
+      "default": 2
+    },
+    "review_stage": {
+      "type": "number",
+      "default": 0
+    },
+    "last_studied_date": {
+      "type": "string"
+    },
+    "next_review_date": {
+      "type": "string"
+    },
+    "times_studied": {
+      "type": "number",
+      "default": 0
+    },
+    "checklist_done": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "topic_id"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

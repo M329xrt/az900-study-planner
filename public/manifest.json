@@ -1,0 +1,19 @@
+{
+  "name": "Momentum — AZ-900 Study Planner",
+  "short_name": "Momentum",
+  "description": "Offline-first personal study planner that builds spaced revision schedules for the Microsoft AZ-900 exam.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FAF7F2",
+  "theme_color": "#22362E",
+  "icons": [
+    {
+      "src": "/mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

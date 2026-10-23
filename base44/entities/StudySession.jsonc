@@ -1,0 +1,50 @@
+{
+  "name": "StudySession",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string"
+    },
+    "minutes": {
+      "type": "number",
+      "default": 0
+    },
+    "tasks_completed": {
+      "type": "number",
+      "default": 0
+    },
+    "questions_reviewed": {
+      "type": "number",
+      "default": 0
+    },
+    "topic_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "task_keys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reflection": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "StudyQuestion",
+  "type": "object",
+  "properties": {
+    "topic_id": {
+      "type": "string"
+    },
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "box": {
+      "type": "number",
+      "default": 1
+    },
+    "last_reviewed_date": {
+      "type": "string"
+    },
+    "next_review_date": {
+      "type": "string"
+    },
+    "times_reviewed": {
+      "type": "number",
+      "default": 0
+    },
+    "times_recalled": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "confident",
+        "archived"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "question",
+    "answer"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

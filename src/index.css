@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 60 4% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 60 4% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 60 4% 11%;
+    --primary: 160 26% 19%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 40 20% 93%;
+    --secondary-foreground: 158 22% 18%;
+    --muted: 40 18% 94%;
+    --muted-foreground: 40 6% 42%;
+    --accent: 36 45% 92%;
+    --accent-foreground: 28 30% 22%;
+    --destructive: 6 62% 48%;
+    --destructive-foreground: 40 33% 97%;
+    --border: 40 14% 87%;
+    --input: 40 14% 87%;
+    --ring: 160 26% 30%;
+    --gold: 34 72% 48%;
+    --sage: 150 16% 43%;
+    --clay: 16 52% 52%;
+    --chart-1: 160 26% 30%;
+    --chart-2: 34 72% 55%;
+    --chart-3: 150 16% 52%;
+    --chart-4: 16 52% 60%;
+    --chart-5: 200 22% 48%;
+    --radius: 1rem;
+    --font-heading: 'Instrument Serif', ui-serif, Georgia, serif;
+    --font-display: 'Instrument Serif', ui-serif, Georgia, serif;
+    --font-body: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --sidebar-background: 40 24% 95%;
+    --sidebar-foreground: 60 4% 20%;
+    --sidebar-primary: 160 26% 19%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 40 20% 90%;
+    --sidebar-accent-foreground: 60 4% 15%;
+    --sidebar-border: 40 14% 87%;
+    --sidebar-ring: 160 26% 30%;
+  }
+
+  .dark {
+    --background: 60 6% 7%;
+    --foreground: 40 24% 94%;
+    --card: 60 5% 10%;
+    --card-foreground: 40 24% 94%;
+    --popover: 60 5% 10%;
+    --popover-foreground: 40 24% 94%;
+    --primary: 150 30% 62%;
+    --primary-foreground: 60 6% 8%;
+    --secondary: 60 5% 15%;
+    --secondary-foreground: 40 24% 92%;
+    --muted: 60 5% 15%;
+    --muted-foreground: 40 10% 62%;
+    --accent: 36 20% 18%;
+    --accent-foreground: 40 24% 92%;
+    --destructive: 6 55% 45%;
+    --destructive-foreground: 40 24% 96%;
+    --border: 60 5% 18%;
+    --input: 60 5% 18%;
+    --ring: 150 30% 55%;
+    --gold: 34 68% 58%;
+    --sage: 150 18% 55%;
+    --clay: 16 45% 60%;
+    --chart-1: 150 30% 62%;
+    --chart-2: 34 68% 62%;
+    --chart-3: 150 18% 58%;
+    --chart-4: 16 45% 66%;
+    --chart-5: 200 20% 60%;
+    --sidebar-background: 60 5% 10%;
+    --sidebar-foreground: 40 24% 90%;
+    --sidebar-primary: 150 30% 62%;
+    --sidebar-primary-foreground: 60 6% 8%;
+    --sidebar-accent: 60 5% 16%;
+    --sidebar-accent-foreground: 40 24% 94%;
+    --sidebar-border: 60 5% 18%;
+    --sidebar-ring: 150 30% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading font-normal tracking-tight;
+  }
+}
+
+@layer components {
+  .panel {
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border) / 0.8);
+    border-radius: 1.5rem;
+  }
+
+  .hairline {
+    border-color: hsl(var(--border) / 0.7);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    white-space: nowrap;
+  }
+
+  .lift {
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 220ms ease, background-color 220ms ease;
+  }
+
+  .lift:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
